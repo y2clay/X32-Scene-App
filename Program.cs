@@ -258,12 +258,14 @@ namespace X32_Scene_App
                 }
             }
             const string quote = "\"";
+
+            string sceneInputString = GetSceneName();
             
             string savePath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             try
             {
-                StreamWriter scene = new StreamWriter(savePath + @"\NewScene.scn");
+                StreamWriter scene = new StreamWriter(savePath + "\\" + sceneInputString + ".scn");
                 scene.WriteLine("#4.0# \"Default\" \"\" %000000000 1");                                                                                                
                 scene.WriteLine(@"/config/chlink OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF OFF");
                 scene.WriteLine(@"/config/auxlink OFF OFF OFF ON");
@@ -2394,7 +2396,7 @@ namespace X32_Scene_App
                 Console.WriteLine("File has been written successfully");
             }
 
-            MessageBox.Show("Scene Creation Complete.\rPlease check your desktop for a file named CustomScene.scn", "X32 Scene App");
+            MessageBox.Show("Scene Creation Complete.\rPlease check your desktop for a file with the scene name you entered", "X32 Scene App");
 
             Console.ForegroundColor=oldColor;
 
@@ -2417,6 +2419,13 @@ namespace X32_Scene_App
             Console.WriteLine("Please make a menu selection: ");
             string menuInputString = Console.ReadLine();
             return menuInputString;
+        }
+
+        static string GetSceneName()
+        {
+            Console.WriteLine("Please enter the name of your scene: ");
+            string sceneInputString = Console.ReadLine();
+            return sceneInputString;
         }
     }
 }
