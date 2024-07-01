@@ -50,8 +50,8 @@ namespace X32_Scene_App
             }
             if (answerOne.ToLower() == "2")
             {
-                channels.Add("KICK1");
-                channels.Add("KICK2");
+                channels.Add("KICK IN");
+                channels.Add("KICK OUT");
             }
 
             Console.Write("How many Snare Mics?(Max 2):");
@@ -62,8 +62,8 @@ namespace X32_Scene_App
             }
             if (answerTwo.ToLower() == "2")
             {
-                channels.Add("SNARE1");
-                channels.Add("SNARE2");
+                channels.Add("SNARE TOP");
+                channels.Add("SNARE BOT");
             }
 
             Console.Write("How many HiHAT Mics?(Max 2):");
@@ -74,8 +74,8 @@ namespace X32_Scene_App
             }
             if (answerThree.ToLower() == "2")
             {
-                channels.Add("HIHAT1");
-                channels.Add("HIHAT2");
+                channels.Add("HH TOP");
+                channels.Add("HH BOT");
             }
 
             Console.Write("How many Tom Mics?(Max 6):");
